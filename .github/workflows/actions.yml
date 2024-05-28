@@ -1,0 +1,9 @@
+name: Actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  install dependencies:
+    runs on: ubuntu-latest
+    uses: actions/checkout@v4
+    run: npm install
+    run: echo "Hello World"
