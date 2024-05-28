@@ -4,5 +4,5 @@ on: [push]
 jobs:
   install dependencies:
     runs on: ubuntu-latest
-    uses: actions/checkout@v4
-    run: npm install
+    - uses: actions/checkout@v4
+    - run: npm install
