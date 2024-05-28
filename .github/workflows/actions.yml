@@ -6,5 +6,3 @@ jobs:
     runs on: ubuntu-latest
     uses: actions/checkout@v4
     run: npm install
-    run: echo "Hello World"
-    
