@@ -7,14 +7,21 @@ jobs:
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
-
-      - name: install npm
         uses: actions/checkout@v4
-      - run: npm ci
-             ./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx
-             npm run start:test &
-             npm test
+
+      - name: Install npm dependencies
+        run: |
+          npm ci
+
+      - name: Run ESLint
+        run: |
+          ./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx
+
+      - name: Start test server
+        run: npm run start:test
+
+      - name: Run tests
+        run: npm test
 
       # add uses mongodb mongodb-community@5.0
       # start db
