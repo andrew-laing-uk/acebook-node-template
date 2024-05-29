@@ -1,0 +1,5 @@
+version: 0.0
+os: linux
+files:
+  - source: /water-acebook.zip
+    destination: /var/www/waterapp
