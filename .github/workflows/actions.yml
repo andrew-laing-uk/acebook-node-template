@@ -12,8 +12,9 @@ jobs:
       - name: install npm
         uses: actions/checkout@v4
       - run: npm ci
+             npm i --save-dev eslint [eslint-plugins]
              npm run start:test &
-             npm test 
+             npm test
 
       # add uses mongodb mongodb-community@5.0
       # start db
