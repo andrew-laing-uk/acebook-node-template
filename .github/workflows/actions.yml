@@ -39,9 +39,12 @@ jobs:
           aws-access-key-id: ${{ secrets.MY_AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
           aws-region: eu-west-2
+
+      - name: Create zip file
+        run: zip -r water-acebook.zip . -x '*.git*' -x "*node_modules/*" -x "*cypress/*" -x "*cypress.config*" -x "*jest.config*"
+
       - name: Upload Artifact to s3
-        run: aws s3 sync . s3://water-acebook-bucket/ --exclude ".git*" --exclude "*node_modules/*" --exclude "*cypress/*" --exclude "*cypress.config*" --exclude "*jest.config*" 
+        run: aws s3 sync water-acebook.zip s3://water-acebook-bucket/
+
       - name: CodeDeploy
-        run: aws deploy create-deployment --application-name AceBook-Water-App --deployment-group-name production --s3-location bucket=water-acebook-bucket
-
-
+        run: aws deploy create-deployment --application-name AceBook-Water-App --deployment-group-name production --s3-location bucket=water-acebook-bucket,bundleType=zip,key=water-acebook.zip
