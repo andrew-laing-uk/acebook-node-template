@@ -43,9 +43,6 @@ jobs:
       - name: Create zip file
         run: zip -r water-acebook.zip . -x '*.git*' -x "*node_modules/*" -x "*cypress/*" -x "*cypress.config*" -x "*jest.config*"
 
-      - name: List directory contents
-        run: ls -l
-
       - name: Upload Artifact to s3
         run: aws s3 cp water-acebook.zip s3://water-acebook-bucket/water-acebook.zip
 
