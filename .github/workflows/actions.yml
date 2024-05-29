@@ -2,8 +2,28 @@ name: Actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  install-dependencies:
+  cicd-pipeline:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: install npm
+        uses: actions/checkout@v4
       - run: npm install
+
+      - name: Start MongoDB
+        uses: MongoCamp/mongodb-github-action@1.0.0
+        with:
+          mongodb-version: 5.0.9
+      - run: curl http://localhost:27017
+
+
+      # add uses mongodb mongodb-community@5.0
+      # start db
+      # npm run start:test
+      # npm test -- full tests
+      # npm run test:unit         # unit tests only
+      # add uses aws ???
+      # deploy to s3
