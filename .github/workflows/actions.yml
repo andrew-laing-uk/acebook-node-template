@@ -1,5 +1,5 @@
 name: Actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: Group water learning GitHub Actions
 on: [push]
 jobs:
   cicd-pipeline:
@@ -16,7 +16,7 @@ jobs:
       - name: Start MongoDB
         uses: MongoCamp/mongodb-github-action@1.0.0
         with:
-          mongodb-version: 5.0.9
+          mongodb-version: 5.0
       - run: curl http://localhost:27017
 
 
