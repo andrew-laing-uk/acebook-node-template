@@ -23,10 +23,9 @@ jobs:
           ./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Start test server
-        run: npm run start:test &
-
-      - name: Run tests
-        run: npm test
+        run: |
+             npm run start:test &
+             npm test
 
       # # add uses mongodb mongodb-community@5.0
       # # start db
