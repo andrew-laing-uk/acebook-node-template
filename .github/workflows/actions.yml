@@ -40,4 +40,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
           aws-region: eu-west-2
       - name: Upload Artifact to s3
-        run: aws s3 sync * s3:/water-acebook-bucket/
+        run: aws s3 sync . s3:/water-acebook-bucket/
