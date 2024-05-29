@@ -41,3 +41,8 @@ jobs:
           aws-region: eu-west-2
       - name: Upload Artifact to s3
         run: aws s3 sync . s3://water-acebook-bucket/ --exclude ".git*" --exclude "*node_modules/*" --exclude "*cypress/*" --exclude "*cypress.config*" --exclude "*jest.config*" 
+      - name: CodeDeploy
+        run: aws deploy create-deployment --application-name AceBook-Water-App --deployment-group-name production
+
+
+
