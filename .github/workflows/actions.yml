@@ -12,8 +12,7 @@ jobs:
       - name: install npm
         uses: actions/checkout@v4
       - run: npm ci
-             yarn
-             eslint . --ext .js,.jsx,.ts,.tsx
+             npx eslint . --ext .js,.jsx,.ts,.tsx
              npm run start:test &
              npm test
 
