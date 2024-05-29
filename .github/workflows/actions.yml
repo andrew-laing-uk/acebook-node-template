@@ -47,7 +47,7 @@ jobs:
         run: ls -l
 
       - name: Upload Artifact to s3
-        run: aws s3 sync water-acebook.zip s3://water-acebook-bucket/water-acebook.zip
+        run: aws s3 cp water-acebook.zip s3://water-acebook-bucket/water-acebook.zip
 
       - name: CodeDeploy
         run: aws deploy create-deployment --application-name AceBook-Water-App --deployment-group-name production --s3-location bucket=water-acebook-bucket,bundleType=zip,key=water-acebook.zip
