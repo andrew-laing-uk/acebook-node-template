@@ -12,7 +12,7 @@ jobs:
       - name: install npm
         uses: actions/checkout@v4
       - run: npm ci
-             npm i --save-dev eslint [eslint-plugins]
+             apm install linter-eslint
              npm run start:test &
              npm test
 
