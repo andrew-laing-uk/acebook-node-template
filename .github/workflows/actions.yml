@@ -32,13 +32,4 @@ jobs:
              npm run start:test &
              npm test
 
-      # # add uses mongodb mongodb-community@5.0
-      # # start db
-      # - run: curl http://localhost:27017
-
-      
-      # # npm run start:test
-      # # npm test -- full tests
-      # # npm run test:unit         # unit tests only
-      # # add uses aws ???
       # # deploy to s3
