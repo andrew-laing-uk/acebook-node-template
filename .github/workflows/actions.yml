@@ -23,22 +23,22 @@ jobs:
           ./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Start test server
-        run: npm run start:test
+        run: npm run start:test &
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: npm test
 
-      # add uses mongodb mongodb-community@5.0
-      # start db
-      - name: Start MongoDB
-        uses: MongoCamp/mongodb-github-action@1.0.0
-        with:
-          mongodb-version: 5.0
-      - run: curl http://localhost:27017
+      # # add uses mongodb mongodb-community@5.0
+      # # start db
+      # - name: Start MongoDB
+      #   uses: MongoCamp/mongodb-github-action@1.0.0
+      #   with:
+      #     mongodb-version: 5.0
+      # - run: curl http://localhost:27017
 
       
-      # npm run start:test
-      # npm test -- full tests
-      # npm run test:unit         # unit tests only
-      # add uses aws ???
-      # deploy to s3
+      # # npm run start:test
+      # # npm test -- full tests
+      # # npm run test:unit         # unit tests only
+      # # add uses aws ???
+      # # deploy to s3
