@@ -11,17 +11,19 @@ jobs:
 
       - name: install npm
         uses: actions/checkout@v4
-      - run: npm install
+      - run: npm ci
+             npm run start:test &
+             npm test 
 
+      # add uses mongodb mongodb-community@5.0
+      # start db
       - name: Start MongoDB
         uses: MongoCamp/mongodb-github-action@1.0.0
         with:
           mongodb-version: 5.0
       - run: curl http://localhost:27017
 
-
-      # add uses mongodb mongodb-community@5.0
-      # start db
+      
       # npm run start:test
       # npm test -- full tests
       # npm run test:unit         # unit tests only
