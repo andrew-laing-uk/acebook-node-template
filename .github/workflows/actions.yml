@@ -22,6 +22,11 @@ jobs:
         run: |
           ./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx
 
+      - name: Start MongoDB
+        uses: MongoCamp/mongodb-github-action@1.0.0
+        with:
+            mongodb-version: 5.0
+
       - name: Start test server
         run: |
              npm run start:test &
@@ -29,10 +34,6 @@ jobs:
 
       # # add uses mongodb mongodb-community@5.0
       # # start db
-      # - name: Start MongoDB
-      #   uses: MongoCamp/mongodb-github-action@1.0.0
-      #   with:
-      #     mongodb-version: 5.0
       # - run: curl http://localhost:27017
 
       
