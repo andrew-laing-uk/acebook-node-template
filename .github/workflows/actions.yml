@@ -44,7 +44,7 @@ jobs:
         run: zip -r water-acebook.zip . -x '*.git*' -x "*node_modules/*" -x "*cypress/*" -x "*cypress.config*" -x "*jest.config*"
 
       - name: Upload Artifact to s3
-        run: aws s3 sync water-acebook.zip s3://water-acebook-bucket/
+        run: aws s3 sync water-acebook.zip s3://water-acebook-bucket/water-acebook.zip
 
       - name: CodeDeploy
         run: aws deploy create-deployment --application-name AceBook-Water-App --deployment-group-name production --s3-location bucket=water-acebook-bucket,bundleType=zip,key=water-acebook.zip
