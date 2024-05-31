@@ -1,5 +1,5 @@
 name: Actions
-run-name: Group water learning GitHub Actions
+run-name: Group water learning GitHub Actions lol
 on: [push]
 jobs:
   cicd-pipeline:
